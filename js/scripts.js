@@ -93,19 +93,21 @@ let entered = document.getElementById("key").value.toLowerCase();
     .then(response => response.json())
     .then(data => {
       var passwords = data.passwords;
+      var hacker = data.hackerrank;
       var found = false;
       for (var i = 0; i < passwords.length; i++) {
         if (entered === decrypt(passwords[i],passphrase)) {
+            alert(decrypt(hacker[i],passphrase))
           found = true;
           break;
         }
 
       }
-      if (found) {
-        alert("Here you go !!")
-      } else {
-        console.log("Error: Password not found.");
-      }
+      // if (found) {
+      //   alert("Here you go !!")
+      // } else {
+      //   console.log("Error: Password not found.");
+      // }
     })
     .catch(error => console.error('Error fetching passwords:', error));
 }
