@@ -11207,3 +11207,9 @@ body {
 .footer {
   padding: 5rem 0;
 }
+
+#xfactor{
+  z-index: 5;
+  color: red;
+  padding-bottom: 20px;
+}
