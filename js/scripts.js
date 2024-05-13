@@ -94,15 +94,19 @@ let entered = document.getElementById("key").value.toLowerCase();
     .then(data => {
       var passwords = data.passwords;
       var hacker = data.hackerrank;
+    var final = data.finalpassword;
       var found = false;
-      for (var i = 0; i < passwords.length; i++) {
-        if (entered === decrypt(passwords[i],passphrase)) {
-            alert(decrypt(hacker[i],passphrase))
-          found = true;
-          break;
-        }
+      // for (var i = 0; i < passwords.length; i++) {
+      //   if (entered === decrypt(passwords[i],passphrase)) {
+      //       alert(decrypt(hacker[i],passphrase))
+      //     found = true;
+      //     break;
+      //   }
 
-      }
+      // }
+         if (entered === decrypt(final,passphrase)){
+        alert("where food and drink are found, beneath a big screen crowned.")
+    }
       // if (found) {
       //   alert("Here you go !!")
       // } else {
