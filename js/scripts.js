@@ -96,25 +96,78 @@ let entered = document.getElementById("key").value.toLowerCase();
       var hacker = data.hackerrank;
     var final = data.finalpassword;
       var found = false;
-      // for (var i = 0; i < passwords.length; i++) {
-      //   if (entered === decrypt(passwords[i],passphrase)) {
-      //       alert(decrypt(hacker[i],passphrase))
-      //     found = true;
-      //     break;
-      //   }
+    //   for (var i = 0; i < passwords.length; i++) {
+    //     if (entered === decrypt(passwords[i],passphrase)) {
+    //         alert(decrypt(hacker[i],passphrase))
+    //       found = true;
+    //       break;
+    //     }
 
-      // }
+    //   }
          if (entered === decrypt(final,passphrase)){
         alert("where food and drink are found, beneath a big screen crowned.")
     }
-      // if (found) {
-      //   alert("Here you go !!")
-      // } else {
-      //   console.log("Error: Password not found.");
-      // }
+    //   if (found) {
+    //     alert("Here you go !!")
+    //   } else {
+    //     console.log("Error: Password not found.");
+    //   }
     })
     .catch(error => console.error('Error fetching passwords:', error));
 }
+
+
+
+
+
+
+
+
+
+// Initialize Firebase
+const firebaseConfig = {
+    apiKey: process.env.API_KEY,
+    authDomain: "jessi-2c466.firebaseapp.com",
+    databaseURL: "https://jessi-2c466-default-rtdb.firebaseio.com",
+    projectId: "jessi-2c466",
+    storageBucket: "jessi-2c466.firebasestorage.app",
+    messagingSenderId: "98631176476",
+    appId: "1:98631176476:web:cd3fc521ade3d3e0c52ad9",
+    measurementId: "G-LK1J7HEWMW"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const database = firebase.database();
+
+  // Fetch data from the database
+  function fetchData() {
+    const dbRef = database.ref("/");
+    dbRef.once("value")
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const data = snapshot.val();
+          const answer = data.Answer;
+          const password = data.Password;
+          console.log(answer)
+          console.log(password)
+        //   document.getElementById("output").innerHTML = `
+        //     <p><strong>Answer:</strong> ${answer}</p>
+        //     <p><strong>Password:</strong> ${password}</p>
+        }
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+}
+fetchData();
+
+         
+
+
+
+
+
 
 
 

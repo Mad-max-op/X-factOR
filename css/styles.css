@@ -11145,6 +11145,7 @@ body {
 }
 
 .signup-section {
+  /* display: none; */
   padding: 10rem 0;
   /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("../assets/img/bg-signup.jpg"); */
   /* background-color: #000; */
@@ -11156,6 +11157,7 @@ body {
   background-size: cover;
 }
 .signup-section .form-signup input {
+  /* display: none; */
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
   height: auto;
