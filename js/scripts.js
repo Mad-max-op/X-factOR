@@ -96,24 +96,24 @@ let entered = document.getElementById("key").value.toLowerCase();
       var hacker = data.hackerrank;
     var final = data.finalpassword;
       var found = false;
-    /*  for (var i = 0; i < passwords.length; i++) {
+      for (var i = 0; i < passwords.length; i++) {
         if (entered === decrypt(passwords[i],passphrase)) {
             alert(decrypt(hacker[i],passphrase))
           found = true;
           break;
         }
 
-      }*/
+      }
 
 
-         fetchData(entered);
+        // fetchData(entered);
 
 
-   /*  if (found) {
+     if (found) {
         alert("Here you go !!")
       } else {
         console.log("Error: Password not found.");
-      }*/
+     }
     })
     .catch(error => console.error('Error fetching passwords:', error));
 }
@@ -321,6 +321,7 @@ function handleKeyPress(event) {
 
 
 // Initialize Firebase
+/*
  const firebaseConfig = {
     apiKey: "AIzaSyA3Qvi_cWEZZUl1mTzv_9Vv4Zej9QArOi0",
      authDomain: "jessi-2c466.firebaseapp.com",
@@ -351,4 +352,4 @@ function handleKeyPress(event) {
      .catch((error) => {
      console.error("Error fetching data:", error);
      });
- }
+ }*/
