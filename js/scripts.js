@@ -96,24 +96,24 @@ let entered = document.getElementById("key").value.toLowerCase();
       var hacker = data.hackerrank;
     var final = data.finalpassword;
       var found = false;
-      for (var i = 0; i < passwords.length; i++) {
+    /*  for (var i = 0; i < passwords.length; i++) {
         if (entered === decrypt(passwords[i],passphrase)) {
             alert(decrypt(hacker[i],passphrase))
           found = true;
           break;
         }
 
-      }
+      }*/
 
 
-        //  fetchData(entered);
+         fetchData(entered);
 
 
-      if (found) {
+   /*  if (found) {
         alert("Here you go !!")
       } else {
         console.log("Error: Password not found.");
-      }
+      }*/
     })
     .catch(error => console.error('Error fetching passwords:', error));
 }
@@ -321,34 +321,34 @@ function handleKeyPress(event) {
 
 
 // Initialize Firebase
-// const firebaseConfig = {
-//     apiKey: "AIzaSyA3Qvi_cWEZZUl1mTzv_9Vv4Zej9QArOi0",
-//     authDomain: "jessi-2c466.firebaseapp.com",
-//     databaseURL: "https://jessi-2c466-default-rtdb.firebaseio.com",
-//     projectId: "jessi-2c466",
-//     storageBucket: "jessi-2c466.firebasestorage.app",
-//     messagingSenderId: "98631176476",
-//     appId: "1:98631176476:web:cd3fc521ade3d3e0c52ad9",
-//     measurementId: "G-LK1J7HEWMW"
-//   };
+ const firebaseConfig = {
+    apiKey: "AIzaSyA3Qvi_cWEZZUl1mTzv_9Vv4Zej9QArOi0",
+     authDomain: "jessi-2c466.firebaseapp.com",
+    databaseURL: "https://jessi-2c466-default-rtdb.firebaseio.com",
+    projectId: "jessi-2c466",
+    storageBucket: "jessi-2c466.firebasestorage.app",
+    messagingSenderId: "98631176476",
+    appId: "1:98631176476:web:cd3fc521ade3d3e0c52ad9",
+    measurementId: "G-LK1J7HEWMW"
+  };
 
-//   // Initialize Firebase
-//   firebase.initializeApp(firebaseConfig);
-//   const database = firebase.database();
+   // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const database = firebase.database();
 
-//   // Fetch data from the database
-//   function fetchData(entered) {
-//     const dbRef = database.ref("/");
-//     dbRef.once("value")
-//       .then((snapshot) => {
-//         if (snapshot.exists()) {
-//           const data = snapshot.val();
-//           if (entered==data.Password){
-//             alert(data.Answer);
-//           }
-//         }
-//     })
-//     .catch((error) => {
-//       console.error("Error fetching data:", error);
-//     });
-// }
+  // Fetch data from the database
+  function fetchData(entered) {
+    const dbRef = database.ref("/");
+    dbRef.once("value")
+       .then((snapshot) => {
+         if (snapshot.exists()) {
+          const data = snapshot.val();
+           if (entered==data.Password){
+             alert(data.Answer);
+           }
+        }
+    })
+     .catch((error) => {
+     console.error("Error fetching data:", error);
+     });
+ }
